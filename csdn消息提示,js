@@ -1,22 +1,39 @@
 // ==UserScript==
-// @name         csdn消息提示
+// @name         csdn消息提示+私信页
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  try to take over the world!
 // @author       You
 // @include      *://blog.csdn.net/*
-// @exclude    https://im.csdn.net/chat*
+// @include      *://im.csdn.net/chat/
 // @grant        none
 // ==/UserScript==
 function click() {
-    var tip = document.querySelector("#toolbar-remind > span > i")
-    if (tip != null) {
-        window.open("https://im.csdn.net/chat/");
-    }
-    document.querySelector("#csdn-toolbar > div.toolbar-advert > span").click()
+	var tip = document.querySelector("#toolbar-remind > span > i")
+	if (tip != null) {
+		window.open("https://im.csdn.net/chat/");
+	}
+	document.querySelector("#csdn-toolbar > div.toolbar-advert > span").click()
 }
 
 (function () {
-    setTimeout(click, 1000);
+	if (location.href.indexOf('blog.') != -1) {
+		setTimeout(click, 1000);
+	} else {
+		setTimeout(click2(), 4000);
+	}
 
 })();
+
+
+
+//function declaration 形式的可以定义在使用后边
+function click2() {
+	var zhidaole = document.querySelector("#app div.left-menu div.chatListMenu.__vuescroll.hasVBar div.msg-item.active-msg-item > div.right-context-tip > div > a");
+	if (zhidaole != null) {
+		zhidaole.click();
+	}
+	var t = document.querySelector("div.left-menu > div > div.chat-list > div.chatListMenu.__vuescroll > div.__panel > div > div:nth-child(2)");
+	t.click();
+
+}
