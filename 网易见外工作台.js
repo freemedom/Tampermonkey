@@ -38,7 +38,7 @@ function add_button() {
 			document.querySelector("div.c-video > video").style.width = "auto"
 		} else {
 			document.querySelector("div.c-video > video").style.width = ""
-			evt = new MouseEvent("mousedown", {
+			let evt = new MouseEvent("mousedown", {//Uncaught ReferenceError: evt is not defined
 				bubbles: true,
 				cancelable: true,
 				view: window,
@@ -78,7 +78,7 @@ function add_button() {
 		text-align: center;
 		//border-radius: 6px;
 		//padding: 5px 0;
-
+	
 		/* 定位 */
 		position: absolute;
 		//z-index: 1;
