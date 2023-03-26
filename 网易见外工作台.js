@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         ÍøÒ×¼ûÍâ¹¤×÷Ì¨
+// @name         ç½‘æ˜“è§å¤–å·¥ä½œå°
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  try to take over the world!
@@ -25,9 +25,9 @@ function add_button() {
 	'use strict';
 	add_container();
 
-	var button1 = document.createElement("button"); //´´½¨Ò»¸öinput¶ÔÏó£¨ÌáÊ¾¿ò°´Å¥£©
+	var button1 = document.createElement("button"); //åˆ›å»ºä¸€ä¸ªinputå¯¹è±¡ï¼ˆæç¤ºæ¡†æŒ‰é’®ï¼‰
 	// button1.id = "id001";
-	button1.textContent = "ÇĞ»»ÊÓÆµ¿í¶È";
+	button1.textContent = "åˆ‡æ¢è§†é¢‘å®½åº¦";
 	button1.style.display = "block";
 	button1.style.fontSize = "0.2rem";
 	button1.title = ""
@@ -36,11 +36,16 @@ function add_button() {
 		let now_width = document.querySelector("div.c-video > video").style.width
 		if (now_width == '') {
 			document.querySelector("div.c-video > video").style.width = "auto"
-		}
-		else{
+		} else {
 			document.querySelector("div.c-video > video").style.width = ""
+			evt = new MouseEvent("mousedown", {
+				bubbles: true,
+				cancelable: true,
+				view: window,
+			});
+			document.querySelector("span.icon.icon-expand").dispatchEvent(evt);
 		}
-		
+
 		return;
 	};
 	background_color(button1);
@@ -50,13 +55,13 @@ function add_button() {
 
 
 
-	//ÔÚä¯ÀÀÆ÷¿ØÖÆÌ¨¿ÉÒÔ²é¿´ËùÓĞº¯Êı£¬ctrl+shift+I µ÷³ö¿ØÖÆÌ¨£¬ÔÚConsole´°¿Ú½øĞĞÊµÑé²âÊÔ
+	//åœ¨æµè§ˆå™¨æ§åˆ¶å°å¯ä»¥æŸ¥çœ‹æ‰€æœ‰å‡½æ•°ï¼Œctrl+shift+I è°ƒå‡ºæ§åˆ¶å°ï¼Œåœ¨Consoleçª—å£è¿›è¡Œå®éªŒæµ‹è¯•
 	var contain_ = document.querySelector("#sp-ac-container")
 	contain_.appendChild(button1);
 
-	// // contain_.innerHTML += `<span class="tooltiptext">ÌáÊ¾ÎÄ±¾</span>`//²»ÄÜÓÃinnerHTML£¬·ñÔòevent»áÏûÊ§
+	// // contain_.innerHTML += `<span class="tooltiptext">æç¤ºæ–‡æœ¬</span>`//ä¸èƒ½ç”¨innerHTMLï¼Œå¦åˆ™eventä¼šæ¶ˆå¤±
 	// var span_tip = document.createElement("span");
-	// span_tip.textContent = "ÌáÊ¾ÎÄ±¾"
+	// span_tip.textContent = "æç¤ºæ–‡æœ¬"
 	// span_tip.className = "tooltiptext";
 	// contain_.appendChild(span_tip);
 
@@ -73,8 +78,8 @@ function add_button() {
 		text-align: center;
 		//border-radius: 6px;
 		//padding: 5px 0;
-	
-		/* ¶¨Î» */
+
+		/* å®šä½ */
 		position: absolute;
 		//z-index: 1;
 	}
@@ -112,7 +117,7 @@ function display_block(){
 }
 
 $(document).ready(function () {
-    $(document).keydown(function (event) { //µ÷ÓÃ¼üÅÌ±àÂë£¬°´ÁË¼üÅÌ»Øµ÷keydownÀïµÄfunction(event)º¯Êı£¬event¾ÍÊÇÄã°´µÄÄÇ¸ö°´¼üµÄcodeÂë
+    $(document).keydown(function (event) { //è°ƒç”¨é”®ç›˜ç¼–ç ï¼ŒæŒ‰äº†é”®ç›˜å›è°ƒkeydowné‡Œçš„function(event)å‡½æ•°ï¼Œeventå°±æ˜¯ä½ æŒ‰çš„é‚£ä¸ªæŒ‰é”®çš„codeç 
         debugger
         // console.log(event.altKey);
         // console.log(event.keyCode)
