@@ -23,6 +23,8 @@
 
 function add_button() {
 	'use strict';
+	document.querySelector("div.c-caption-check > div.r-area").style.marginLeft="950px"
+	document.querySelector("div.c-video > video").style.maxHeight="none"
 	add_container();
 
 	var button1 = document.createElement("button"); //创建一个input对象（提示框按钮）
@@ -35,7 +37,7 @@ function add_button() {
 	button1.onclick = function () {
 		let now_width = document.querySelector("div.c-video > video").style.width
 		if (now_width == '') {
-			document.querySelector("div.c-video > video").style.width = "auto"
+			document.querySelector("div.c-video > video").style.width = "1000px"
 		} else {
 			document.querySelector("div.c-video > video").style.width = ""
 			let evt = new MouseEvent("mousedown", {//Uncaught ReferenceError: evt is not defined
