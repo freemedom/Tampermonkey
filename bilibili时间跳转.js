@@ -25,7 +25,10 @@ function add_input() {
 	inp.onchange = function () {
 		data_string = "0 " + inp.value
 		new_time = (new Date(data_string).getTime() - new Date("0 00:00:00").getTime()) / 1000
-		document.querySelector("a[data-video-time]").setAttribute("data-video-time", new_time)
+		// document.querySelector("a[data-video-time]").setAttribute("data-video-time", new_time)
+		// document.querySelector("a[data-video-time]").click()
+
+		document.querySelector("div.bpx-player-video-perch > div > video").currentTime = new_time
 	}
 
 	var contain_ = document.querySelector("#sp-ac-container")
@@ -43,7 +46,7 @@ function add_container() {
 	let Container = document.createElement('div');
 	Container.id = "sp-ac-container";
 	Container.style.position = "fixed";
-	Container.style.right = "150px";
+	Container.style.right = "0px";
 	Container.style.top = "80px";
 	document.body.appendChild(Container);
 }
