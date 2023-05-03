@@ -156,7 +156,9 @@ function worker_function() {
 			readAsync = (url, onload, onerror) => {
 				debugger
 				if (url = "default.woff2") {
-					url = 'https://libass.github.io/JavascriptSubtitlesOctopus/assets/js/default.woff2'
+					// url = 'https://libass.github.io/JavascriptSubtitlesOctopus/assets/js/default.woff2'\
+					url = 'https://raw.githubusercontent.com/freemedom/ass/main/NotoSansSC-Regular.otf'
+
 				}
 				var xhr = new XMLHttpRequest;
 				xhr.open("GET", url, true);
@@ -7407,8 +7409,11 @@ function worker_function() {
 window.SubtitlesOctopusOnLoad = function () {
 	var options = {
 		video: document.querySelector("video"),
-		subUrl: 'https://libass.github.io/JavascriptSubtitlesOctopus/subtitles/test.ass',
-		fonts: ['https://libass.github.io/JavascriptSubtitlesOctopus/fonts/Arial.ttf', 'https://libass.github.io/JavascriptSubtitlesOctopus/fonts/TimesNewRoman.ttf'],
+		// subUrl: 'https://github.com/freemedom/ass/raw/main/%E7%AC%AC02%E8%AF%9D.ass',
+		subUrl: 'https://raw.githubusercontent.com/freemedom/ass/main/%E7%AC%AC02%E8%AF%9D.ass',
+		// fonts: ['https://cdn.jsdelivr.net/gh/Ratodo/Lib/fonts/siyuan/siyuan.ttf','https://libass.github.io/JavascriptSubtitlesOctopus/fonts/Arial.ttf', 'https://libass.github.io/JavascriptSubtitlesOctopus/fonts/TimesNewRoman.ttf'],
+		fonts: ['https://raw.githubusercontent.com/freemedom/ass/main/NotoSansSC-Regular.otf'],
+		// fallbackFont:'https://cdn.jsdelivr.net/gh/Ratodo/Lib/fonts/siyuan/siyuan.ttf',
 		//onReady: onReadyFunction,
 		debug: true,
 		workerUrl: URL.createObjectURL(new Blob(["(" + worker_function.toString() + ")()"], {
@@ -7423,3 +7428,4 @@ window.SubtitlesOctopusOnLoad = function () {
 if (SubtitlesOctopus) {
 	SubtitlesOctopusOnLoad();
 }
+//Uncaught (in promise) TypeError: Failed to execute 'fetch' on 'WorkerGlobalScope': Failed to parse URL from subtitles-octopus-worker.wasm
