@@ -155,7 +155,7 @@ function worker_function() {
 			}
 			readAsync = (url, onload, onerror) => {
 				debugger
-				if (url = "default.woff2") {
+				if (url === "default.woff2") { // 尴尬了 原来我一直少写了个等号
 					// url = 'https://libass.github.io/JavascriptSubtitlesOctopus/assets/js/default.woff2'\
 					url = 'https://raw.githubusercontent.com/freemedom/ass/main/NotoSansSC-Regular.otf'
 
