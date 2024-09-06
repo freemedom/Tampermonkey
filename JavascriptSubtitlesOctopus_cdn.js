@@ -34,6 +34,7 @@ function worker_function() {
 	Module = Module || {};
 	Module["preRun"] = Module["preRun"] || [];
 	Module["preRun"].push(function () {
+		debugger
 		Module["FS_createPath"]("/", "fonts", true, true);
 		Module["FS_createPath"]("/", "fontconfig", true, true);
 		if (!self.subContent) {
